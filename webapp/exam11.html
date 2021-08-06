@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	
+</head>
+
+<body>
+	
+	<h1>변수의 범위</h1>
+	
+	<script type="text/javascript">
+	
+		// var 붙이고 변수 선언시 =============================================================================
+		var name = "global";	//전역변수
+		
+		function checkscope(){
+			var name = "local";	//지역변수 -- 전역변수와 같은 변수이름을 사용해도 전역변수의 값은 변하지 않음
+			console.log(name);
+		}
+	
+		checkscope();		//함수 출력 "local"
+		console.log(name);	//변수 출력 "global"
+		
+		//var 생략시 ===========================================================================================
+		var name1 = "global";
+		
+		function checkscope1(){
+			name1 = "local";	//전역변수의 값을 변경
+			name2 = "로컬";		//암묵적으로 새 전역변수가 선언됨
+		}
+		
+		checkscope1();			//함수 실행 -- 함수 실행 안할시 name1은 변경되지 않고 name2는 선언되지 않음
+		console.log(name1);		//변경된 전역변수 출력 "local"
+		console.log(name2);		//새로 선언된 전역변수 출력 "로컬"
+		
+			
+			
+			
+	</script>
+
+
+</body>
+	
+
+</html>
