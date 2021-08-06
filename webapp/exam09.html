@@ -10,23 +10,49 @@
 
 <body>
 
+	<h1>함수</h1>
+	
 	<script type="text/javascript">
 	
 		//이름이 있는 함수(기명함수, 선언적함수)
 		
-		//함수 정의
-		function plus(a, b){
-			var sum = a + b;
-			return sum;
-		}
-		
+		//========================================================
 		var plusSum = plus(10, 9);
 		console.log(plusSum);
 		
 		document.write(plusSum);
 		
-	</script>
+		var result = plus(2.4, 5.1);
+		console.log(result);
+		
+		var result2 = plus("안녕", "하세요");
+		console.log(result2);
 
+		//함수 정의 --> *****정의 부터 해석된
+		function plus(a, b){
+			var sum = a + b;			//기명함수 스크립트위치 상관없음
+			return sum;
+		}
+		//========================================================
+		
+		//이름이 없는 함수(익명함수) -->이름이 없어서 바로 사용해야함
+		var minus = function (a, b){
+			var sum = a - b;			//익명함수 사용처보다 상단에 위치해야함
+			return sum;	
+		}		
+		
+		console.log(typeof minus);		//function
+		console.log(typeof minus());	//number
+		
+		console.log(minus(10, 20));
+		
+		var result3 = minus(5, 2.2);
+		console.log(result3);
+		
+		var result4 = minus("안녕", "하세요");
+		console.log(result4);		//NaN
+		
+	</script>
 
 </body>
 	
