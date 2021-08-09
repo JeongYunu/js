@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="/js/assets/js/jquery/jquery-1.12.4.js"></script>
+	<title>Insert title here</title>
+</head>
+<body>
+	
+
+	<ul>
+		<li id="first" class="red">첫번째 아이템입니다.</li>
+		<li id="second" class="blue"><strong>두번째 아이템입니다.</strong></li>
+		<li id="third" class="del">세번째 아이템입니다.</li>
+		<li><strong>네번째 아이템입니다.</strong></li>
+	</ul>
+		
+	<button id="btn" type="button">li추가</button>
+	
+</body>
+	
+	<script type="text/javascript">
+	
+		$("#btn").on("click", function(){
+			console.log("button click");
+			
+			$("ul").append("<li id='five'>다섯번째 아이템입니다.</li>");
+			$("ul").append("<li id='six'><strong>여섯번째 아이템입니다.<strong></li>");
+			$("ul").append("<li id='seven'>일곱번째 아이템입니다.</li>");
+			
+			/* 
+			$("li").on("click", function(){		//추가된 요소를 컨트롤할수없음
+				console.log("li tag click");
+				var $this = $(this);
+				console.log($this);
+			});
+			 */
+			 
+		});
+		
+		 $("ul").on("click", "li", function(){
+			console.log("li tag click");
+			var $this = $(this);
+			var $id = $(this).attr("id");
+			console.log($this);
+			switch($id){
+				case "first":
+					$this.text("첫번째");
+					break;
+				case "second":
+					$this.text("두번째");
+					break;
+				case "third":
+					$this.text("세번째");
+					break;
+				case "five":
+					$this.text("다섯번째");
+					break;
+				case "six":
+					$this.text("여섯번째");
+					break;
+				case "seven":
+					$this.text("정윤우");
+					break;
+				default:
+					$this.text("꽝!!!!");
+			};
+			
+			/*
+			if($id === "seven"){
+				$this.text("정윤우");
+				
+			};
+			*/
+
+		 });
+	
+	</script>
+	
+	
+	
+</html>
